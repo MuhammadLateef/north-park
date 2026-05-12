@@ -1,11 +1,11 @@
 import DestinationCard from "@/components/destinations/destination-card"
-
+import { StaticImageData } from "next/image"
 interface Destination {
   id: string
   title: string
   location: string
   rating: number
-  image: string
+  image: string | StaticImageData
   price: number
   description: string
 }

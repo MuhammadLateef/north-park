@@ -28,7 +28,7 @@ interface Destination {
   title: string
   location: string
   price: number
-  heroImage?: string | StaticImageData
+  heroImage?: string| StaticImageData
   description: string
   bestTime: string
   weather: string

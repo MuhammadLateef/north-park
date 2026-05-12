@@ -4,12 +4,12 @@ import React, { useState, KeyboardEvent } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { MapPin, Star } from "lucide-react"
-
+import { StaticImageData } from "next/image"
 type Destination = {
   id: string | number
   title: string
   location: string
-  Cardimage?: string
+  Cardimage?: string| StaticImageData
   rating: number | string
 }
 

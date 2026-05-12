@@ -3,6 +3,8 @@ import destination2 from "@/public/images/destination/02.jpg"
 import destination3 from "@/public/images/destination/03.jpg"
 
 import logo from "@/public/logo.png"
+import About1 from "@/public/images/about1.jpeg"
+import About2 from "@/public/images/about2.jpeg"
 
 // Hero images
 
@@ -14,4 +16,4 @@ import Img5 from "@/public/images/hero/img5.jpeg"
 import Img6 from "@/public/images/hero/img6.jpeg"
 
 
-export {destination1,destination2,destination3,logo,Img1,Img2,Img3,Img4,Img5,Img6}
+export {destination1,destination2,destination3,logo,Img1,Img2,Img3,Img4,Img5,Img6,About1,About2}
