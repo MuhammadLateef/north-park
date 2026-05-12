@@ -9,7 +9,7 @@ import {logo} from "@/app/Index"
 import Image from "next/image";
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Tours", href: "/tours" },
+  { label: "Tours", href: "/tour" },
   { label: "Trekking", href: "/trekking" },
   { label: "Contact", href: "/contact" },
 ];

@@ -11,7 +11,7 @@ type DestinationType = {
   title: string
   location: string
   rating: number
-  Cardimage?: string | StaticImageData
+  image: string | StaticImageData
   price: number
   description: string
 }
@@ -22,7 +22,7 @@ const destinations: DestinationType[] = [
     title: "Shangrila Skardu",
     location: "Skardu",
     rating: 5,
-    Cardimage: destination1.src,
+    image: destination1.src,
     price: 199,
     description:
       "Discover breathtaking destinations, ancient forts, and unforgettable adventures - tailored just for you.",
@@ -32,7 +32,7 @@ const destinations: DestinationType[] = [
     title: "Upper Kachura Lake",
     location: "Skardu",
     rating: 4.8,
-    Cardimage: destination2.src,
+    image: destination2.src,
     price: 159,
     description:
       "Experience the majestic beauty of ancient architecture surrounded by stunning mountain landscapes.",
@@ -42,7 +42,7 @@ const destinations: DestinationType[] = [
     title: "Fairy Medows",
     location: "Gilgit",
     rating: 4.8,
-    Cardimage: destination3.src,
+    image: destination3.src,
     price: 100,
     description:
       "Luxury accommodations in a historic setting with world-class amenities and breathtaking views.",

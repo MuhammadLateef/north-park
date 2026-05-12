@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
     color: string;
   }[] = [
     { icon: FaFacebookF, href: "#", color: "hover:text-blue-600" },
-    { icon: FaInstagram, href: "#", color: "hover:text-pink-500" },
+    { icon: FaInstagram, href: "https://www.instagram.com/hadii._786", color: "hover:text-pink-500" },
     { icon: CiYoutube, href: "#", color: "hover:text-red-500" },
   ];
 
@@ -201,7 +201,7 @@ const Footer: React.FC = () => {
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    abdulhadi7774@gmail.com
+                    gonorthp@gmail.com
                   </p>
                 </div>
               </div>
