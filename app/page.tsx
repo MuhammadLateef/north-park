@@ -4,12 +4,14 @@ import { WhyChooseUs } from "@/components/why-choose-us";
 import AboutSection from "@/components/aboutus/about";
 import ClientReviews from "@/components/client-review";
 import Footer from "@/components/Footer/footer";
+import HotelsSection from "@/components/hotels";
 export default function Home() {
   return (
     <div className=" bg-zinc-50 font-sans dark:bg-black">
       <HeroSection />
       <Destination />
       <WhyChooseUs />
+      <HotelsSection />
       <AboutSection />
       <ClientReviews />
       <Footer />

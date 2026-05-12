@@ -15,5 +15,11 @@ import Img4 from "@/public/images/hero/img4.jpeg"
 import Img5 from "@/public/images/hero/img5.jpeg"
 import Img6 from "@/public/images/hero/img6.jpeg"
 
+// hotels
 
-export {destination1,destination2,destination3,logo,Img1,Img2,Img3,Img4,Img5,Img6,About1,About2}
+import Hotel1 from "@/public/images/hostel/hotel1.jpeg"
+import Hotel2 from "@/public/images/hostel/hotel2.jpeg"
+import Hotel3 from "@/public/images/hostel/hotel3.jpeg"
+
+
+export {destination1,destination2,destination3,logo,Img1,Img2,Img3,Img4,Img5,Img6,About1,About2, Hotel1,Hotel2,Hotel3}
