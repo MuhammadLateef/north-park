@@ -64,7 +64,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 font-bold text-stone-800"
               >
                 <Mountain className="h-5 w-5 text-emerald-600" />
-                <span>PeakTrails</span>
+                <span>Go North Pak</span>
               </Link>
               <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
                 <X className="h-5 w-5" />

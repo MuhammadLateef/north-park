@@ -69,9 +69,7 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Alnoor Treks and Tours, founded by Iqrar Hussain, a proud local
-              and owner of Alnoor Hotel Skardu, was built to showcase the true
-              beauty of Gilgit-Baltistan. From K2 Base Camp to Deosai, we offer
+              Go north Pakistan, founded by Abdul Hadi, From K2 Base Camp to Deosai, we offer
               authentic tours, guided treks, and unforgettable experiences led
               by locals who call this land home.
             </p>
