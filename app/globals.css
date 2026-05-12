@@ -127,3 +127,24 @@
     @apply font-sans;
   }
 }
+
+
+/* styles/globals.css */
+
+@font-face {
+    font-family: 'Rustic Roadway';
+    src: url('/fonts/RusticRoadway.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Example usage */
+
+body {
+    font-family: var(--font-poppins), sans-serif;
+}
+
+.heading {
+    font-family: 'Rustic Roadway', cursive;
+}

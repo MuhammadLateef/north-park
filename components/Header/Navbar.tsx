@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Mountain, X } from "lucide-react";
 import Link from "next/link";
-
+import {logo} from "@/app/Index"
+import Image from "next/image";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Tours", href: "/tours" },
@@ -22,8 +23,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-stone-800">
-          <Mountain className="h-6 w-6 text-emerald-600" />
-          <span className="text-lg tracking-tight">PeakTrails</span>
+          <Image src={logo} width={100} height={100} alt="logo"/>
         </Link>
 
         {/* Desktop Nav Links */}

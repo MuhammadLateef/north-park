@@ -9,16 +9,18 @@ import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
-
+import { Img1,Img2,Img3,Img4,Img5 , Img6} from "@/app/Index";
+import { image } from "framer-motion/client";
 // ─── Slide Data ───────────────────────────────────────────────────────────────
-// Edit this array to change slides
+
 const slides = [
   {
     id: "s1",
     location: "Hunza Valley, Pakistan",
     title: "Where Heaven\nMeets Earth",
     subtitle: "Explore the ancient Silk Road corridors and glacial lakes of the Karakoram.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+    // image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+    image:Img4,
     tag: "7 Days · Group Tour",
   },
   {
@@ -26,7 +28,8 @@ const slides = [
     location: "Fairy Meadows, Pakistan",
     title: "Camp Under\nNanga Parbat",
     subtitle: "Sleep at the foot of the world's ninth-highest peak in a meadow straight from legend.",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
+    // image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
+      image:Img6,
     tag: "5 Days · Trekking",
   },
   {
@@ -34,17 +37,11 @@ const slides = [
     location: "Skardu, Pakistan",
     title: "Turquoise Lakes\n& Desert Dunes",
     subtitle: "Discover Shangrila Resort, Satpara Lake, and the cold desert of Skardu.",
-    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&q=80",
+    // image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&q=80",
+      image:Img3,
     tag: "6 Days · Adventure",
   },
-  {
-    id: "s4",
-    location: "Swat Valley, Pakistan",
-    title: "Switzerland\nof the East",
-    subtitle: "Lush green valleys, cascading waterfalls, and ancient Buddhist ruins await.",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80",
-    tag: "4 Days · Cultural Tour",
-  },
+ 
 ];
 
 // ─── Framer Motion Variants ───────────────────────────────────────────────────
@@ -95,7 +92,7 @@ export default function HeroSection() {
           <SwiperSlide key={slide.id}>
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              style={{ backgroundImage: `url(${slide.image.src})` }}
             />
           </SwiperSlide>
         ))}

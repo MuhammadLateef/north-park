@@ -50,7 +50,7 @@ export function WhyChooseUs() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center sm:mb-16 lg:mb-20">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl heading">
             Why Choose Us
           </h2>
           <p className="mt-4 text-lg text-slate-600 sm:mt-6 sm:text-xl">
