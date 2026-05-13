@@ -3,6 +3,7 @@ import { Geist, Poppins } from "next/font/google";
 import "./globals.css";
 import { Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Header/Navbar";
+import Footer from "@/components/Footer/footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ export default function RootLayout({
       <body className={`min-h-full flex flex-col ${playfair.variable} antialiased`}>
         <Navbar />
         {children}
-        
+        <Footer />
         </body>
     </html>
   );

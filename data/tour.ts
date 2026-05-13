@@ -24,7 +24,7 @@ export interface PlanYourVisit {
 
 export interface Tour {
   id: string
-  title: string
+  title: string| string[]
   location: string
   rating: number
   price: number

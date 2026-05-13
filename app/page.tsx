@@ -3,8 +3,8 @@ import HeroSection from "@/components/hero-section/HeroSection";
 import { WhyChooseUs } from "@/components/why-choose-us";
 import AboutSection from "@/components/aboutus/about";
 import ClientReviews from "@/components/client-review";
-import Footer from "@/components/Footer/footer";
 import HotelsSection from "@/components/hotels";
+import BookingForm from "@/components/booking-form/BookingForm";
 export default function Home() {
   return (
     <div className=" bg-zinc-50 font-sans dark:bg-black">
@@ -13,8 +13,8 @@ export default function Home() {
       <WhyChooseUs />
       <HotelsSection />
       <AboutSection />
+      <BookingForm />
       <ClientReviews />
-      <Footer />
     </div>
   );
 }
