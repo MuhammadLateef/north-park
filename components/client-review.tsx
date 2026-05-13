@@ -22,7 +22,7 @@ const reviews: Review[] = [
     title: "Product Designer, Gradient",
     rating: 4.95,
     review:
-      "Found a great plumber within minutes! He arrived on time, fixed the issue and even gave me a few maintenance tips. I'll definitely use this platform again.",
+      "Our trip to Hunza Valley was unforgettable. The mountains, food, and local hospitality were beyond expectations!”",
     avatar:
       "https://images.unsplash.com/photo-1494790108755-2616b332c24e?w=80&h=80&fit=crop&crop=face",
   },
@@ -32,7 +32,7 @@ const reviews: Review[] = [
     location: "New York",
     rating: 4.95,
     review:
-      "Found a great plumber within minutes! He arrived on time, fixed the issue and even gave me a few maintenance tips. I'll definitely use this platform again.",
+      "Loved every moment in Skardu. The tour was well organized, safe, and full of breathtaking views.",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
   },
@@ -42,7 +42,7 @@ const reviews: Review[] = [
     location: "Canada",
     rating: 4.95,
     review:
-      "Found a great plumber within minutes! He arrived on time, fixed the issue and even gave me a few maintenance tips. I'll definitely use this platform again.",
+      "Exploring Fairy Meadows was like a dream. Everything from transport to accommodation was perfectly managed.",
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
   },
@@ -52,7 +52,7 @@ const reviews: Review[] = [
     location: "France",
     rating: 4.95,
     review:
-      "Found a great plumber within minutes! He arrived on time, fixed the issue and even gave me a few maintenance tips. I'll definitely use this platform again.",
+      "A wonderful experience through Naran and Kaghan Valley. Highly recommend for nature lovers!",
     avatar:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face",
   },

@@ -266,8 +266,8 @@ const ContactSection: React.FC = () => {
   return (
     <section className="mb-10">
       {/* Hero Section */}
-      <section className="relative">
-        <div className="relative h-[70vh] w-full overflow-hidden">
+      <section className="relative ">
+        <div className="relative sm:h-[100vh] h-[70vh] w-full overflow-hidden">
           <Image
             src={
               (About2 as StaticImageData)
@@ -275,7 +275,7 @@ const ContactSection: React.FC = () => {
             }
             alt="Contact Hero"
             fill
-            className="object-cover"
+            className="object-cover "
             priority
           />
 
@@ -295,7 +295,7 @@ const ContactSection: React.FC = () => {
 
       {/* Contact Form Section */}
       <div className="container mx-auto max-w-[85rem] px-6">
-        <div className="-mt-[100px] rounded-lg border border-gray-300 bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] md:px-12 md:py-16">
+        <div className="sm:-mt-[180px] -mt-[100px] rounded-lg border border-gray-300 bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] md:px-12 md:py-16">
           <div className="flex flex-wrap">
             {/* Form */}
             <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">

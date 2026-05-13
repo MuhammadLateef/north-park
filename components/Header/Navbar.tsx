@@ -54,8 +54,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-stone-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <nav className="sticky top-0 z-50 w-full shadow-2xl border-b border-stone-200 bg-white/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-stone-800">
@@ -119,7 +119,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Sheet open={bookingOpen} onOpenChange={setBookingOpen}>
             <SheetTrigger asChild>
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-5 text-sm font-semibold">
+              <Button className="bg-blue-400 hover:bg-emerald-700 pointer text-white rounded-full px-5 text-sm font-semibold">
                 Book Now
               </Button>
             </SheetTrigger>

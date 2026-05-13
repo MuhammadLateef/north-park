@@ -106,7 +106,7 @@ export default function HeroSection() {
           Lives OUTSIDE Swiper so it is never touched by Swiper's DOM.
           key={activeSlide.id} triggers AnimatePresence re-mount on change */}
       <div className="absolute inset-0 z-20 flex items-center pb-24 md:items-center md:pb-0">
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
@@ -143,7 +143,7 @@ export default function HeroSection() {
 
               {/* CTA Buttons */}
               <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
-                <button className="group flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-emerald-400 active:scale-95">
+                <button className="group flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-emerald-500 active:scale-95">
                   Explore Tour
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>

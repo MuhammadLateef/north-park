@@ -11,7 +11,7 @@ export default function TourPage() {
         {/* Header */}
         <div className="text-center mb-12">
           
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 heading">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-4 heading">
             Find Your Dream Destination
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">

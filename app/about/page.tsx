@@ -1,4 +1,4 @@
-import { AboutUs } from '@/components/abou-us'
+import { AboutUs } from '@/components/about-us'
 
 export const metadata = {
   title: 'About Us - Adventure Travel',

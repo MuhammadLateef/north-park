@@ -54,7 +54,7 @@ export default function Destination() {
     <div className="py-12">
       <div className="max-w-[80rem] mx-auto container px-4 sm:px-6">
         <div className="text-center mb-12">
-          <p className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl heading">
+          <p className="text-balance text-3xl font-bold tracking-tight text-blue-400 sm:text-4xl lg:text-5xl heading">
             Explore now
           </p>
 

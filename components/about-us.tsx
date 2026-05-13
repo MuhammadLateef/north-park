@@ -1,10 +1,11 @@
 'use client'
 
-import React from 'react'
+import React,{useState} from 'react'
 import { Heart, Globe, Sparkles, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-
+import Link from 'next/link'
 export function AboutUs() {
+
   const values = [
     {
       icon: <Heart className="h-6 w-6" />,
@@ -32,13 +33,25 @@ export function AboutUs() {
     <section className="w-full bg-white">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50 to-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <h1 className="text-balance text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6">
-            Our Story
+        <div className="mx-auto max-w-6xl text-justify px-4 sm:px-6 lg:px-8 py-20">
+          <h1 className="text-balance text-blue-400 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 heading">
+            WHO WE ARE
           </h1>
-          <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Wandering the world with purpose. Creating memories that last a lifetime.
+          <p className="text-sm sm:text-base my-6 text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Your Trusted Gateway to Northern Pakistan
           </p>
+
+           <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Welcome to Go North Pakistan. We provide you with the best travel services, including tours, treks, rent-a-car, and guesthouse booking. Our mission is to make your journey comfortable, safe, and memorable. Founded by Abdul Hadi — born in Astore (Chorit) and raised in Gilgit — we combine local expertise with genuine hospitality.
+From the ancient forts of Hunza Valley to the wild plateaus of Deosai in Astore, every itinerary is personally crafted to balance adventure, comfort, and cultural authenticity. We serve solo travellers, families and large groups with end-to-end support from booking to safe return.
+          </p>
+          <ul className=' list-decimal text-start space-y-2.5 my-6 text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto'>
+            <li>Expert local guides with mountain certifications</li>
+            <li>Safety-first approach on all treks & tours</li>
+            <li>Fully customised itineraries & flexible packages</li>
+            <li>International & domestic travellers welcome</li>
+          </ul>
+          <p className='text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto'>personally designs each itinerary to ensure comfort, safety, and memorable moments — promoting the true beauty of Northern Pakistan with honest guidance and personalised travel plans.</p>
         </div>
       </div>
 
@@ -47,7 +60,7 @@ export function AboutUs() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-justify">
           <div className="space-y-8">
             <div className="border-l-4 border-sky-500 pl-6 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 heading">
                 How It All Started
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -63,7 +76,7 @@ export function AboutUs() {
             </div>
 
             <div className="border-l-4 border-sky-500 pl-6 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 heading">
                 Our Mission
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -72,7 +85,7 @@ export function AboutUs() {
             </div>
 
             <div className="border-l-4 border-sky-500 pl-6 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 heading">
                 Why We're Different
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -94,7 +107,7 @@ export function AboutUs() {
       <div className="bg-slate-50 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl heading font-bold text-blue-400 mb-4">
               Our Core Values
             </h2>
             <p className="text-lg text-slate-600">
@@ -127,7 +140,7 @@ export function AboutUs() {
       <div className="bg-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 heading mb-4">
               Meet Our Team
             </h2>
             <p className="text-lg text-slate-600">
@@ -155,8 +168,14 @@ export function AboutUs() {
           <p className="text-lg text-sky-100 mb-8">
             Join us on a journey to some of Earth's most extraordinary destinations
           </p>
-          <Button className="bg-white text-sky-600 hover:bg-slate-100 text-base font-semibold px-8 py-6">
-            Start Your Journey
+          <Button  
+           className="bg-white text-sky-600 hover:bg-slate-100 text-base font-semibold px-8 py-6"
+           
+           >
+            <Link href="/contact">
+             Start Your Journey
+            </Link>
+           
           </Button>
         </div>
       </div>
