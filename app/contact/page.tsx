@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, FormEvent } from "react"
 import Image, { type StaticImageData } from "next/image"
 
-import { destination2 } from "../Index"
+import { About2 } from "../Index"
 
 import {
   Phone,
@@ -270,7 +270,7 @@ const ContactSection: React.FC = () => {
         <div className="relative h-[70vh] w-full overflow-hidden">
           <Image
             src={
-              (destination2 as StaticImageData)
+              (About2 as StaticImageData)
                 .src
             }
             alt="Contact Hero"

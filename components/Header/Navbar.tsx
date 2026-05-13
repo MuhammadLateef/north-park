@@ -2,11 +2,18 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu, Mountain, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { treks } from "@/lib/treks-data";
+import BookingForm from "@/components/booking-form/BookingForm";
 
 const logo = "/logo.png";
 
@@ -24,8 +31,8 @@ const navLinks: NavLink[] = [
 ];
 
 export default function Navbar() {
-  // FIX: typed as string | null instead of just null
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -38,7 +45,6 @@ export default function Navbar() {
         setActiveDropdown(null);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -50,6 +56,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-stone-200 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-stone-800">
           <Image src={logo} width={100} height={100} alt="logo" />
@@ -95,7 +102,6 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                // FIX: only render Link when href is defined
                 link.href && (
                   <Link
                     href={link.href}
@@ -109,15 +115,28 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
+        {/* Desktop — Book Now opens BookingForm sheet */}
         <div className="hidden md:block">
-          <Button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-5 text-sm font-semibold">
-            Book Now
-          </Button>
+          <Sheet open={bookingOpen} onOpenChange={setBookingOpen}>
+            <SheetTrigger asChild>
+              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-5 text-sm font-semibold">
+                Book Now
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-full sm:max-w-lg overflow-y-auto"
+            >
+              <SheetHeader className="mb-2">
+                <SheetTitle className="sr-only">Book a trek or tour</SheetTitle>
+              </SheetHeader>
+              <BookingForm />
+            </SheetContent>
+          </Sheet>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet open={open} onOpenChange={setOpen}>
+        {/* Mobile hamburger menu */}
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
@@ -125,17 +144,23 @@ export default function Navbar() {
           </SheetTrigger>
 
           <SheetContent side="right" className="w-72 p-6">
+            <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+
             {/* Close + Logo */}
             <div className="flex items-center justify-between mb-8">
               <Link
                 href="/"
-                onClick={() => setOpen(false)}
+                onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2 font-bold text-stone-800"
               >
                 <Mountain className="h-5 w-5 text-emerald-600" />
                 <span>Go North Pak</span>
               </Link>
-              <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileOpen(false)}
+              >
                 <X className="h-5 w-5" />
               </Button>
             </div>
@@ -148,7 +173,6 @@ export default function Navbar() {
                     <div>
                       <button
                         onClick={() =>
-                          // FIX: typed correctly, no longer errors
                           setActiveDropdown(
                             activeDropdown === "mobile-trekking"
                               ? null
@@ -173,7 +197,7 @@ export default function Navbar() {
                               key={trek.id}
                               href={`/treks/${trek.slug}`}
                               onClick={() => {
-                                setOpen(false);
+                                setMobileOpen(false);
                                 setActiveDropdown(null);
                               }}
                               className="block text-sm font-medium text-stone-600 hover:text-emerald-600 transition-colors py-1"
@@ -188,11 +212,10 @@ export default function Navbar() {
                       )}
                     </div>
                   ) : (
-                    // FIX: only render Link when href is defined
                     link.href && (
                       <Link
                         href={link.href}
-                        onClick={() => setOpen(false)}
+                        onClick={() => setMobileOpen(false)}
                         className="block text-base font-medium text-stone-700 hover:text-emerald-600 transition-colors py-1"
                       >
                         {link.label}
@@ -203,15 +226,19 @@ export default function Navbar() {
               ))}
             </ul>
 
-            {/* Mobile CTA */}
+            {/* Mobile Book Now — closes mobile menu, opens booking sheet */}
             <Button
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                setBookingOpen(true);
+              }}
             >
               Book Now
             </Button>
           </SheetContent>
         </Sheet>
+
       </div>
     </nav>
   );
