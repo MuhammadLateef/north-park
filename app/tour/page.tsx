@@ -1,7 +1,7 @@
 // app/tour/page.tsx
 
 import DestinationCard from "@/components/destinations/destination-card"
-import { tourData } from "@/data/tour"           // ← single source of truth
+import { tourData } from "@/data/tour"           
 
 export default function TourPage() {
   return (

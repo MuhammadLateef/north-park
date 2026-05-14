@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ArrowRight, MapPin, Star, Moon } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 // import BookingForm from "../bookingform/booking-form";
 
 interface Hotel {
@@ -26,16 +27,16 @@ function HotelsCard({ hotels }: HotelsCardProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 //   const [showBookingForm, setShowBookingForm] = useState<boolean>(false);
 
-  const handleCardClick = (): void => {
-    router.push(`/hotels/${hotels.id}`);
-  };
+  // const handleCardClick = (): void => {
+  //   router.push(`/hotels/${hotels.id}`);
+  // };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleCardClick();
-    }
-  };
+  // const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+  //   if (event.key === "Enter" || event.key === " ") {
+  //     event.preventDefault();
+  //     handleCardClick();
+  //   }
+  // };
 
 //   const handleBookNow = (e: React.MouseEvent<HTMLButtonElement>): void => {
 //     e.stopPropagation();
@@ -56,8 +57,7 @@ function HotelsCard({ hotels }: HotelsCardProps) {
         className="hotels-card"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onKeyDown={handleKeyDown}
-        onClick={handleCardClick}
+        
         tabIndex={0}
         role="button"
         aria-label={`View details for ${hotels.title} in ${hotels.location}`}
@@ -103,19 +103,21 @@ function HotelsCard({ hotels }: HotelsCardProps) {
 
           <div className="card-footer">
             <div className="card-price-block">
-              <span className="card-price">
+              <span className="card-price ">
                 {hotels.price.toLocaleString()}
               </span>
               <span className="card-price-label">PKR / night</span>
             </div>
+           <Link href="/contact">
             <button
               className="card-book-btn"
-             
-              aria-label={`Book ${hotels.title}`}
             >
+               
               Book Now
               <ArrowRight size={16} className="btn-arrow" />
+            
             </button>
+              </Link>
           </div>
         </div>
 
@@ -304,7 +306,7 @@ function HotelsCard({ hotels }: HotelsCardProps) {
           }
 
           .card-price {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: #0f172a;
             letter-spacing: -0.02em;

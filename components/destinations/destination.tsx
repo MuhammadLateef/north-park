@@ -18,7 +18,7 @@ type DestinationType = {
 
 const destinations: DestinationType[] = [
   {
-    id: "shigar-fort-1",
+    id: "shangrila-skardu",
     title: "Shangrila Skardu",
     location: "Skardu",
     rating: 5,
@@ -28,7 +28,7 @@ const destinations: DestinationType[] = [
       "Discover breathtaking destinations, ancient forts, and unforgettable adventures - tailored just for you.",
   },
   {
-    id: "shigar-fort-2",
+    id: "upper-kachura-lake",
     title: "Upper Kachura Lake",
     location: "Skardu",
     rating: 4.8,
@@ -38,7 +38,7 @@ const destinations: DestinationType[] = [
       "Experience the majestic beauty of ancient architecture surrounded by stunning mountain landscapes.",
   },
   {
-    id: "shigar-fort-3",
+    id: "fairy-meadows",
     title: "Fairy Medows",
     location: "Gilgit",
     rating: 4.8,
@@ -52,7 +52,7 @@ const destinations: DestinationType[] = [
 export default function Destination() {
   return (
     <div className="py-12">
-      <div className="max-w-[80rem] mx-auto container px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto container px-4 sm:px-6">
         <div className="text-center mb-12">
           <p className="text-balance text-3xl font-bold tracking-tight text-blue-400 sm:text-4xl lg:text-5xl heading">
             Explore now

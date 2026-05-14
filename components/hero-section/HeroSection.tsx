@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Img1,Img2,Img3,Img4,Img5 , Img6} from "@/app/Index";
 import { image } from "framer-motion/client";
+import Link from "next/link";
 // ─── Slide Data ───────────────────────────────────────────────────────────────
 
 const slides = [
@@ -143,13 +144,13 @@ export default function HeroSection() {
 
               {/* CTA Buttons */}
               <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
-                <button className="group flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-emerald-500 active:scale-95">
+                <Link href={"/tour"} className="group flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-emerald-500 active:scale-95">
                   Explore Tour
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-                <button className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95">
+                </Link>
+                <Link href={"/tour"} className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95">
                   View All Tours
-                </button>
+                </Link>
               </motion.div>
 
               {/* Tag */}

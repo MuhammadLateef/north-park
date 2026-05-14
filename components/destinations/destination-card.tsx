@@ -10,7 +10,7 @@ type Destination = {
   id: string
   title: string
   location: string
-  image: string | StaticImageData   // ← unified to "image" (was "Cardimage")
+  image: string | StaticImageData   
   rating: number
 }
 
@@ -23,7 +23,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleCardClick = () => {
-    router.push(`/tour/${destination.id}`)  // ← fixed: was /destination/, now /tour/
+    router.push(`/tour/${destination.id}`)  
   }
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -69,14 +69,14 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         >
-          <span className="text-white text-xl font-bold tracking-widest underline underline-offset-4">
+          <span className="text-white text-base font-semibold tracking-widest underline underline-offset-4">
             View Details
           </span>
         </div>
 
         {/* Title & location pinned to bottom-left */}
         <div className="absolute bottom-4 left-4 text-white">
-          <h3 className="text-lg font-semibold leading-tight">{destination.title}</h3>
+          <h3 className="text-base font-semibold leading-tight">{destination.title}</h3>
           <div className="flex items-center gap-1 mt-1 opacity-90">
             <MapPin className="w-3.5 h-3.5" />
             <span className="text-sm">{destination.location}</span>

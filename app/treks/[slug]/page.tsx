@@ -62,7 +62,7 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                     {trek.title}
                                 </h1>
 
-                                <p className="max-w-[700px] text-white/90 md:text-lg text-start">
+                                <p className="max-w-175 text-white/90 md:text-lg text-start">
                                     {trek.subtitle}
                                 </p>
                             </div>
@@ -143,6 +143,47 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                     </h2>
 
                                     <p>{trek.bestTimeToVisit}</p>
+
+                                    <h2 className="text-2xl sm:text-4xl font-bold heading mt-8 mb-4 text-blue-400">
+                                        Itinerary
+                                    </h2>
+
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full border-collapse border border-blue-400">
+                                            <thead>
+                                                <tr className="bg-blue-400/10">
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Day</th>
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Title</th>
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Altitude</th>
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Activities</th>
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Accommodation</th>
+                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Meals</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {trek.itinerary.map((day) => (
+                                                    <tr key={day.day} className="hover:bg-blue-400/5 transition-colors">
+                                                        <td className="border border-blue-400 px-4 py-2 font-medium">
+                                                            Day {day.day}
+                                                        </td>
+                                                        <td className="border border-blue-400 px-4 py-2">{day.title}</td>
+                                                        <td className="border border-blue-400 px-4 py-2">{day.altitude}</td>
+                                                        <td className="border border-blue-400 px-4 py-2">
+                                                            <ul className="list-disc list-inside space-y-1">
+                                                                {day.activities.map((activity, index) => (
+                                                                    <li key={index} className="text-sm">
+                                                                        {activity}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </td>
+                                                        <td className="border border-blue-400 px-4 py-2">{day.accommodation}</td>
+                                                        <td className="border border-blue-400 px-4 py-2">{day.meals}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4 pt-8">

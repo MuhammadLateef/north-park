@@ -20,7 +20,7 @@ const hotels: Hotel[] = [
   {
     id: "hunza-story-standard",
     title: "Hotel Hunza Story Standard",
-    location: "Skardu",
+    location: "Hunza",
     image: Hotel1.src,
     price: 10_000,
     rating: 4.6,
@@ -30,7 +30,7 @@ const hotels: Hotel[] = [
   {
     id: "hunza-story-deluxe",
     title: "Hotel Hunza Story Deluxe",
-    location: "Skardu",
+    location: "Hunza",
     image: Hotel2.src,
     price: 14_000,
     rating: 4.8,
@@ -41,7 +41,7 @@ const hotels: Hotel[] = [
   {
     id: "hunza-story-executive",
     title: "Hotel Hunza Story Executive",
-    location: "Skardu",
+    location: "Hunza",
     image: Hotel3.src,
     price: 22_000,
     rating: 5.0,
@@ -67,7 +67,7 @@ export default function HotelsSection() {
             <span className="hotels-heading-accent heading">Hotel Hunza Story</span>
           </h2>
           <p className="hotels-subheading">
-            Handpicked rooms nestled in the heart of Skardu's majestic valleys —
+            Handpicked rooms nestled in the heart of Hunza's majestic valleys —
             where every morning greets you with the Karakoram in full view.
           </p>
         </header>

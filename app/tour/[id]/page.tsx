@@ -4,12 +4,28 @@
 
 import { use } from "react"
 import Image from "next/image"
-import { MapPin, Calendar, Thermometer, Waves, Mountain, Camera, Fish, Tent, Sailboat, TreePine, Bike } from "lucide-react"
-import { getTourById } from "@/data/tour"   // ← reads from the single source of truth
+import {
+  MapPin,
+  Calendar,
+  Thermometer,
+  Waves,
+  Mountain,
+  Camera,
+  Fish,
+  Tent,
+  Sailboat,
+  TreePine,
+  Bike,
+  CheckCircle,
+  Star,
+} from "lucide-react"
+import { getTourById } from "@/data/tour"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Map activity icon strings (from tourData) to Lucide components
+
+
+// Map activity icon strings to Lucide components
 const ICON_MAP: Record<string, React.ElementType> = {
   swimming:    Waves,
   hiking:      Mountain,
@@ -29,7 +45,7 @@ interface PageProps {
 
 export default function TourDetailPage({ params }: PageProps) {
   const { id } = use(params)
-  const tour = getTourById(id)   // ← looks up by id in tourData
+  const tour = getTourById(id)
 
   if (!tour) {
     return (
@@ -46,7 +62,7 @@ export default function TourDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white">
 
       {/* Hero */}
-      <div className="relative h-96 md:h-[500px]">
+      <div className="relative h-96 md:h-125">
         <Image
           src={tour.heroImage || "/placeholder.svg"}
           alt={tour.title}
@@ -77,6 +93,65 @@ export default function TourDetailPage({ params }: PageProps) {
               <p className="text-gray-700 leading-relaxed text-lg">{tour.detailedDescription}</p>
             </section>
 
+            {/* Tour Highlights (only if data exists) */}
+            {tour.highlights && tour.highlights.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-script text-sky-400 mb-6">Tour Highlights</h2>
+                <ul className="space-y-3">
+                  {tour.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
+                      <span className="text-gray-700">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* Itinerary Table (only if data exists) */}
+            {tour.itinerary && tour.itinerary.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-script text-sky-400 mb-6">Itinerary</h2>
+                <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-sky-500 text-white">
+                        <th className="px-4 py-3 text-left font-semibold w-20">Day</th>
+                        <th className="px-4 py-3 text-left font-semibold">Title</th>
+                        <th className="px-4 py-3 text-left font-semibold">Activities</th>
+                        <th className="px-4 py-3 text-left font-semibold w-36">Overnight</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tour.itinerary.map((day, i) => (
+                        <tr
+                          key={day.day}
+                          className={i % 2 === 0 ? "bg-white" : "bg-sky-50"}
+                        >
+                          <td className="px-4 py-4 font-bold text-sky-600 align-top">
+                            Day {day.day}
+                          </td>
+                          <td className="px-4 py-4 font-semibold text-gray-900 align-top whitespace-nowrap">
+                            {day.title}
+                          </td>
+                          <td className="px-4 py-4 text-gray-600 align-top">
+                            <ul className="space-y-1 list-disc list-inside">
+                              {day.activities.map((act, j) => (
+                                <li key={j}>{act}</li>
+                              ))}
+                            </ul>
+                          </td>
+                          <td className="px-4 py-4 text-gray-600 align-top">
+                            {day.overnight}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
+
             {/* Activities */}
             <section>
               <h2 className="text-3xl font-script text-sky-400 mb-6">Activities</h2>
@@ -95,6 +170,24 @@ export default function TourDetailPage({ params }: PageProps) {
                 })}
               </div>
             </section>
+
+            {/* Main Attractions (only if data exists) */}
+            {tour.mainAttractions && tour.mainAttractions.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-script text-sky-400 mb-6">Main Attractions</h2>
+                <div className="flex flex-wrap gap-3">
+                  {tour.mainAttractions.map((attraction, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-2 bg-sky-50 border border-sky-200 text-sky-700 px-4 py-2 rounded-full text-sm font-medium"
+                    >
+                      <Star className="w-4 h-4 fill-sky-400 text-sky-400" />
+                      {attraction}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Gallery */}
             <section>
@@ -144,6 +237,17 @@ export default function TourDetailPage({ params }: PageProps) {
                     <p className="text-gray-600 text-sm">{tour.planYourVisit.weather}</p>
                   </div>
                 </div>
+
+                {/* Duration badge — shown only if itinerary exists */}
+                {tour.itinerary && (
+                  <div className="flex items-start gap-3">
+                    <Calendar className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-900">Duration</p>
+                      <p className="text-gray-600 text-sm">{tour.itinerary.length} Days</p>
+                    </div>
+                  </div>
+                )}
 
                 <Button className="w-full mt-4 bg-sky-500 hover:bg-sky-600 text-white text-base py-3">
                   Contact Now
