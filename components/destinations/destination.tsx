@@ -1,9 +1,9 @@
 import DestinationCard from "./destination-card"
 import { StaticImageData } from "next/image";
 import {
-  destination1,
-  destination2,
   destination3,
+  Tour26,
+  Tour8,
 } from "@/app/Index"
 
 type DestinationType = {
@@ -22,7 +22,7 @@ const destinations: DestinationType[] = [
     title: "Shangrila Skardu",
     location: "Skardu",
     rating: 5,
-    image: destination1.src,
+    image: Tour8.src,
     price: 199,
     description:
       "Discover breathtaking destinations, ancient forts, and unforgettable adventures - tailored just for you.",
@@ -32,17 +32,17 @@ const destinations: DestinationType[] = [
     title: "Upper Kachura Lake",
     location: "Skardu",
     rating: 4.8,
-    image: destination2.src,
+    image: destination3.src,
     price: 159,
     description:
       "Experience the majestic beauty of ancient architecture surrounded by stunning mountain landscapes.",
   },
   {
-    id: "fairy-meadows",
-    title: "Fairy Medows",
+    id: "hunza-skardu-jeep-safari",
+    title: "Hunza & Skardu, Gilgit Baltistan",
     location: "Gilgit",
     rating: 4.8,
-    image: destination3.src,
+    image: Tour26.src,
     price: 100,
     description:
       "Luxury accommodations in a historic setting with world-class amenities and breathtaking views.",

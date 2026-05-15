@@ -72,11 +72,11 @@ export default function TourDetailPage({ params }: PageProps) {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute bottom-8 left-8 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">{tour.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 heading">{tour.title}</h1>
           <p className="text-lg opacity-90">{tour.description}</p>
         </div>
         <div className="absolute bottom-8 right-8 bg-black/60 backdrop-blur-sm text-white px-6 py-3 rounded-lg">
-          <span className="text-2xl font-bold">${tour.price}</span>
+          <span className="text-xl font-medium">${tour.price}</span>
           <span className="text-sm opacity-80 ml-1">/ person</span>
         </div>
       </div>
@@ -89,14 +89,14 @@ export default function TourDetailPage({ params }: PageProps) {
 
             {/* About */}
             <section>
-              <h2 className="text-3xl font-script text-sky-400 mb-4">About {tour.title}</h2>
+              <h2 className="text-3xl font-script text-sky-400 mb-4 heading">About {tour.title}</h2>
               <p className="text-gray-700 leading-relaxed text-lg">{tour.detailedDescription}</p>
             </section>
 
             {/* Tour Highlights (only if data exists) */}
             {tour.highlights && tour.highlights.length > 0 && (
               <section>
-                <h2 className="text-3xl font-script text-sky-400 mb-6">Tour Highlights</h2>
+                <h2 className="text-3xl font-script text-sky-400 mb-6 heading">Tour Highlights</h2>
                 <ul className="space-y-3">
                   {tour.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -111,7 +111,7 @@ export default function TourDetailPage({ params }: PageProps) {
             {/* Itinerary Table (only if data exists) */}
             {tour.itinerary && tour.itinerary.length > 0 && (
               <section>
-                <h2 className="text-3xl font-script text-sky-400 mb-6">Itinerary</h2>
+                <h2 className="text-3xl font-script text-sky-400 mb-6 heading">Itinerary</h2>
                 <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
                   <table className="w-full text-sm">
                     <thead>

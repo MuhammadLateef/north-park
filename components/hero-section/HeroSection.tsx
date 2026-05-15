@@ -71,7 +71,7 @@ export default function HeroSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="relative h-screen min-h-[580px] max-h-[900px] w-full overflow-hidden">
+    <section className="relative h-screen min-h-145 max-h-255 w-full overflow-hidden">
 
       {/* ── Background Swiper ──────────────────────────────────────────────
           IMPORTANT: loop={false} — with loop:true Swiper clones slides
@@ -100,8 +100,8 @@ export default function HeroSection() {
       </Swiper>
 
       {/* ── Gradient Overlays ─────────────────────────────────────────────── */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-black/75 via-black/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
       {/* ── Text Content ───────────────────────────────────────────────────
           Lives OUTSIDE Swiper so it is never touched by Swiper's DOM.

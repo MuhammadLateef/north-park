@@ -1,25 +1,11 @@
-import Destination from "@/components/destinations/destination";
-import HeroSection from "@/components/hero-section/HeroSection";
-import { WhyChooseUs } from "@/components/why-choose-us";
-import AboutSection from "@/components/aboutus/about";
-import ClientReviews from "@/components/client-review";
-import HotelsSection from "@/components/hotels";
-
-
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
 import { getFeaturedGalleries } from "@/lib/gallery-data";
-export default function Home() {
-   const galleries = getFeaturedGalleries();
-  return (
-    <div className=" bg-zinc-50 font-sans dark:bg-black">
-      <HeroSection />
-      <Destination />
-      <WhyChooseUs />
-      <HotelsSection />
-      <AboutSection />
-      <ClientReviews />
 
-        <main className="min-h-screen bg-background">
+export default function Home() {
+  const galleries = getFeaturedGalleries();
+
+  return (
+    <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-accent/5">
         {/* Animated Background Elements */}
@@ -88,6 +74,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-    </div>
   );
 }

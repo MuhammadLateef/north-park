@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    +92 349+++++++
+                    +92 3555238042
                   </p>
                 </div>
               </div>
@@ -218,8 +218,7 @@ const Footer: React.FC = () => {
                   </p>
 
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Go, North Pakistan, Sadpara Rd, near Army Public School,
-                    Devision, Gilgit, 16100
+                    Gilgit, Gilgit-Baltistan, Pakistan
                   </p>
                 </div>
               </div>

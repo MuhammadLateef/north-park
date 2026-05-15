@@ -1,3 +1,5 @@
+
+
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -5,7 +7,8 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Clock, Mountain, Users, ArrowRight, ChevronLeft } from "lucide-react"
 import { treks, type Trek, type Highlight } from "@/lib/treks-data"
-
+import html2canvas from "html2canvas";
+import PrintButton from "@/components/PrintButton"
 type TrekPageProps = {
     params: Promise<{
         slug: string
@@ -47,11 +50,11 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                 <Badge
                                     variant={
                                         trek.difficulty === "Extreme" ||
-                                        trek.difficulty === "Hard"
+                                            trek.difficulty === "Hard"
                                             ? "destructive"
                                             : trek.difficulty === "Moderate"
-                                              ? "secondary"
-                                              : "default"
+                                                ? "secondary"
+                                                : "default"
                                     }
                                     className="mb-4"
                                 >
@@ -71,7 +74,7 @@ export default async function TrekPage({ params }: TrekPageProps) {
                 </section>
 
                 {/* Trek Details */}
-                <section className="py-12 md:py-16 max-w-[90%] mx-auto">
+                <section className="py-12 md:py-16 max-w-[90%] mx-auto " >
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col md:flex-row gap-8">
                             {/* Main Content */}
@@ -137,57 +140,59 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                             )
                                         )}
                                     </ul>
+                                    <div className="" id="print-table">
+                                        <h1 className="text-2xl sm:text-4xl font-bold mt-8 mb-4 text-blue-400 heading">{trek.title}</h1>
+                                        <h2 className="text-lg sm:text-xl font-medium mt-8 mb-4 text-blue-400">
+                                            Best Time to Visit
+                                        </h2>
 
-                                    <h2 className="text-2xl sm:text-4xl font-bold heading mt-8 mb-4 text-blue-400">
-                                        Best Time to Visit
-                                    </h2>
+                                        <p>{trek.bestTimeToVisit}</p>
 
-                                    <p>{trek.bestTimeToVisit}</p>
+                                        <h2 className="text-lg sm:text-xl font-medium mt-8 mb-4 text-blue-400">
+                                            Itinerary
+                                        </h2>
 
-                                    <h2 className="text-2xl sm:text-4xl font-bold heading mt-8 mb-4 text-blue-400">
-                                        Itinerary
-                                    </h2>
-
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse border border-blue-400">
-                                            <thead>
-                                                <tr className="bg-blue-400/10">
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Day</th>
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Title</th>
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Altitude</th>
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Activities</th>
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Accommodation</th>
-                                                    <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Meals</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {trek.itinerary.map((day) => (
-                                                    <tr key={day.day} className="hover:bg-blue-400/5 transition-colors">
-                                                        <td className="border border-blue-400 px-4 py-2 font-medium">
-                                                            Day {day.day}
-                                                        </td>
-                                                        <td className="border border-blue-400 px-4 py-2">{day.title}</td>
-                                                        <td className="border border-blue-400 px-4 py-2">{day.altitude}</td>
-                                                        <td className="border border-blue-400 px-4 py-2">
-                                                            <ul className="list-disc list-inside space-y-1">
-                                                                {day.activities.map((activity, index) => (
-                                                                    <li key={index} className="text-sm">
-                                                                        {activity}
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </td>
-                                                        <td className="border border-blue-400 px-4 py-2">{day.accommodation}</td>
-                                                        <td className="border border-blue-400 px-4 py-2">{day.meals}</td>
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full border-collapse border border-blue-400">
+                                                <thead>
+                                                    <tr className="bg-blue-400/10">
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Day</th>
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Title</th>
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Altitude</th>
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Activities</th>
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Accommodation</th>
+                                                        <th className="border border-blue-400 px-4 py-2 text-left font-semibold">Meals</th>
                                                     </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
+                                                </thead>
+                                                <tbody>
+                                                    {trek.itinerary.map((day) => (
+                                                        <tr key={day.day} className="hover:bg-blue-400/5 transition-colors">
+                                                            <td className="border border-blue-400 px-4 py-2 font-medium">
+                                                                Day {day.day}
+                                                            </td>
+                                                            <td className="border border-blue-400 px-4 py-2">{day.title}</td>
+                                                            <td className="border border-blue-400 px-4 py-2">{day.altitude}</td>
+                                                            <td className="border border-blue-400 px-4 py-2">
+                                                                <ul className="list-disc list-inside space-y-1">
+                                                                    {day.activities.map((activity, index) => (
+                                                                        <li key={index} className="text-sm">
+                                                                            {activity}
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </td>
+                                                            <td className="border border-blue-400 px-4 py-2">{day.accommodation}</td>
+                                                            <td className="border border-blue-400 px-4 py-2">{day.meals}</td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                                    <Link href="/contactus">
+                                    <Link href="/contact">
                                         <Button
                                             className="bg-blue-400 cursor-pointer"
                                             size="lg"
@@ -197,19 +202,13 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                         </Button>
                                     </Link>
 
-                                    <Button
-                                        className="hover:bg-blue-400 hover:text-white cursor-pointer"
-                                        variant="outline"
-                                        size="lg"
-                                    >
-                                        Download Trek Guide
-                                    </Button>
+                                    <PrintButton />
                                 </div>
                             </div>
 
                             {/* Sidebar */}
-                            <div className="w-full md:w-1/3 space-y-6">
-                                <div className="rounded-lg border border-blue-400 bg-card p-6">
+                            <div className="w-full md:w-1/3 space-y-6 sticky top-20 self-start">
+                                <div className="rounded-lg border border-blue-400 bg-card p-6 ">
                                     <h3 className="text-lg font-semibold mb-4 text-blue-400">
                                         Related Treks
                                     </h3>
@@ -261,7 +260,7 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                             href="/"
                                             className="hover:text-blue-400 transition-colors duration-300"
                                         >
-                                            View All Treks
+                                            Back to Home
                                         </Link>
                                     </Button>
                                 </div>
@@ -279,7 +278,7 @@ export default async function TrekPage({ params }: TrekPageProps) {
                                     <a
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        href="https://wa.me/923554229889?text"
+                                        href="https://wa.me/923555238042?text"
                                     >
                                         <Button className="w-full bg-blue-400 hover:bg-white hover:text-black border border-blue-400 cursor-pointer transition-colors duration-300">
                                             Contact a Guide
@@ -293,7 +292,7 @@ export default async function TrekPage({ params }: TrekPageProps) {
                             <Button variant="outline" asChild>
                                 <Link href="/">
                                     <ChevronLeft className="mr-2 h-4 w-4" />
-                                    Back to All Treks
+                                    Back to Home
                                 </Link>
                             </Button>
                         </div>

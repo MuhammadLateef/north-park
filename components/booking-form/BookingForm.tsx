@@ -16,7 +16,7 @@ import { Mountain } from "lucide-react"
 import { treks } from "@/lib/treks-data"
 import { tourData } from "@/data/tour"  // ✅ correct export name
 
-const WHATSAPP_NUMBER = "923554229889"
+const WHATSAPP_NUMBER = "923555238042"
 
 const GROUP_SIZES = [
     "1 person",

@@ -1,6 +1,6 @@
 import {
     destination1,
-   
+    
 } from "@/app/Index"
 
 import { StaticImageData } from "next/image"
